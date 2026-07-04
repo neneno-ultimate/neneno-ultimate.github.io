@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>関数の例</title>
+  <style>.message-style{
+    display:block;   
+     background-color: #13e24a;
+    border: 1px solid #13e24a;
+    padding: 8px;             
+    margin-bottom: 12px;
+    border-radius: 10px;
+  }</style>
+</head>
+<body>
+  <h1>掲示板(仮)</h1>
+  <p class="message-style">作りかけ</p>
+  <button onclick="sayHello()">クリックして挨拶</button>
+  <button onclick="mall()">押せる</button>
+  <p id="result"></p>
+  <p id="mall_result"></p>
+  <div id="posts"></div>
+  <script>
+    // 関数の定義
+    function sayHello() {
+      const name = prompt("名前を入力してください");
+      const malle = prompt("メッセージを入力");
+      const message = name+":" + malle;
+      const posts = document.getElementById("posts");
+
+    const p = document.createElement("p");
+    //p(テキストをいれるとこ)にテキストを代入している
+    p. textContent = message;
+    p.classList.add("message-style");    
+    posts.appendChild(p);
+    }
+    //ここから別のfunction
+    function mall() {
+        const mall =prompt("メッセージを入力");
+        const message = "送信しました:" + mall;
+        document.getElementById("mall_result").textContent=message;
+    }
+  </script>
+</body>
+</html>
